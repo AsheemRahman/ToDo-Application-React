@@ -1,0 +1,85 @@
+body {
+    background: #1a1a1a;
+    /* background-image: url('../assets/prithiviraj-a-p6bryp7tQvY-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.container {
+    width: 40%;
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #232323;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #fefeeb;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: auto;
+}
+
+button {
+    margin-left: 10px;
+    background-color: transparent;
+    color: #fefeeb;
+    border-radius: 5px;
+    padding: 10px;
+    width: 20%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.list {
+    margin-top: 30px !important;
+}
+
+li {
+    text-align: start;
+    margin-bottom: 15px;
+    margin-left: -12px;
+    background-color: #1a1a1a !important;
+    color: #fefeeb !important;
+    border: none;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.list-items {
+    display: flex;
+}
+
+.list-items .list-item-list {
+    flex: 1;
+}
+
+.list-items .list-item-icons {
+    padding-left: 5px;
+    font-size: 25px;
+}
+
+#complete {
+    color: green;
+}
+
+#edit {
+    color: blue;
+}
+
+#delete {
+    color: red;
+}
+
+#list-item {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
