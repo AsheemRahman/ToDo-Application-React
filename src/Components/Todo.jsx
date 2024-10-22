@@ -71,7 +71,6 @@ function Todo() {
         setEditId(editTask.id)
     }
 
-    // Filtered Data based on filter state
     const filteredData = data.filter((item) => {
         if (filter === 'complete'){
             return item.status === true;
