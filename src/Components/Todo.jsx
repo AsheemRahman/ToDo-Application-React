@@ -9,7 +9,7 @@ function Todo() {
     const [Task, setTodo] = useState("")
     const [data, setData] = useState([])
     const [editId, setEditId] = useState(0)
-    const [filter, setFilter] = useState("all") 
+    const [filter, setFilter] = useState("all")
 
     useEffect(() => {
         const savedData = localStorage.getItem('todoList');
@@ -31,20 +31,26 @@ function Todo() {
     }
 
     const addTodo = () => {
-        if (Task !== '') {
-            setData([...data, { list: Task, id: Date.now(), status: false }])
+        if (editId && !data.some((todo) => todo.list === Task)) {
+            const editTodo = data.find((list) => list.id === editId);
+            const updatedTodos = data.map((todo) =>
+                todo.id === editTodo.id ? { ...todo, list: Task } : todo
+            );
+            setData(updatedTodos);
+            setEditId(0);
             setTodo('');
+        } else {
+            if (Task !== '' && !data.some((todo) => todo.list === Task)) {
+                setData([...data, { list: Task, id: Date.now(), status: false }]);
+                setTodo('');
+            } else if (Task === '') {
+                alert('Task cannot be empty');
+            } else {
+                alert('Task already exists');
+                setTodo('');
+            }
         }
-        if (editId) {
-            const editTodo = data.find((list) => list.id == editId)
-            const updateTodo = data.map((to) => to.id == editTodo.id
-                ? (to = { id: to.id, list: Task, status: to.status })
-                : to)
-            setData(updateTodo)
-            setEditId(0)
-            setTodo('')
-        }
-    }
+    };
 
     const inputRef = useRef(null);
     useEffect(() => {
