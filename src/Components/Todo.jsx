@@ -40,10 +40,10 @@ function Todo() {
             setEditId(0);
             setTodo('');
         } else {
-            if (Task !== '' && !data.some((todo) => todo.list === Task)) {
+            if (Task.trim() !== '' && !data.some((todo) => todo.list === Task)) {
                 setData([...data, { list: Task, id: Date.now(), status: false }]);
                 setTodo('');
-            } else if (Task === '') {
+            } else if (Task.trim() == '') {
                 alert('Task cannot be empty');
             } else {
                 alert('Task already exists');
