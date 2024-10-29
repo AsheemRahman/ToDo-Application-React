@@ -42,9 +42,9 @@ function Todo() {
         } else {
             if (Task.trim() !== '' && !data.some((todo) => todo.list === Task)) {
                 setData([...data, { list: Task, id: Date.now(), status: false }]);
-                setTodo('');
             } else if (Task.trim() == '') {
                 alert('Task cannot be empty');
+                setTodo('');
             } else {
                 alert('Task already exists');
                 setTodo('');
